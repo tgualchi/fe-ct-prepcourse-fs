@@ -6,11 +6,15 @@
 function elevarAlCuadrado(num) {
    // Retorna el valor de "num" elevado al cuadrado.
    // Tu código:
+   var resultado = num * num;
+   return resultado;
 }
 
 function elevarAlCubo(num) {
    // Retorna el valor de "num" elevado al cubo.
    // Tu código:
+   var resultado = num * num * num;
+   return resultado;
 }
 
 function elevar(num, exponent) {
