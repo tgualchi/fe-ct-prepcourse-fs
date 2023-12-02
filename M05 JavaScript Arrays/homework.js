@@ -3,18 +3,14 @@
 function devolverPrimerElemento(array) {
    // Retornar el primer elemento del arreglo recibido por parámetro.
    // Tu código:
-   if (array.length ===0){
-      return null
-   }
+  
    return array [0];
 }
 
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   if (array.length ===0){
-      return null;
-   }
+
    return array[array.length -1];
  
 }
@@ -29,10 +25,7 @@ function incrementarPorUno(array) {
    // El arreglo recibido por parámetro contiene números.
    // Retornar un arreglo con los elementos incrementados en +1.
    // Tu código:
-   var resultado = array.map(function(elemento) {
-      return elemento + 1;
-    });
-    return resultado;
+  return array.map(elemento => elemento + 1);
 }
 
 function agregarItemAlFinalDelArray(array, elemento) {
@@ -70,10 +63,7 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   const suma = arrayOfNums.reduce(function(acumulador, elemento) {
-      return acumulador + elemento;
-    }, 0); 
-  
+   let suma = arrayOfNums.reduce((acumulador, elemento) => acumulador + elemento, 0); 
     return suma;
 }
 
@@ -81,13 +71,9 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   var suma = 0;
-   for(var i =0; 
-      i <  resultadosTest.length;
-      i++){
-      suma=suma+resultadosTest[i];
-   }
-   return suma/resultadosTest.length;
+   
+   let suma = resultadosTest.reduce((acumulador, elemento) => acumulador + elemento, 0)
+   return suma / resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
@@ -103,6 +89,7 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
+   
    if (arguments.length === 0) {
       return 0;
     } else if (arguments.length === 1) {
@@ -140,8 +127,10 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+
+
   const numStr = num.toString();
-  return numStr[0] === '9';
+  return numStr[0] === '9'; 
 
 
   }
@@ -210,16 +199,16 @@ function breakStatement(num) {
 
    var paraRetornar = [];
 
-   for(let i=0; i <= 10; i++){
-      var num = 2+i;
+   for (let i = 0; i < 10; i++) {
+      num += 2;
       paraRetornar.push(num);
-      if (num === i){
-         break
-      }
-      if (paraRetornar.length <10){
-         return "Se interrumpió la ejecución";
+
+      if (num === i * 2) {
+         paraRetornar = "Se interrumpió la ejecución";
+         break;
       }
    }
+
    return paraRetornar;
 }
 
@@ -230,6 +219,19 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var paraRetornar = [];
+
+   for (let i = 0; i < 10; i++) {
+      if (i === num) {
+         // Cuando la iteración es igual al número, omitir la suma y continuar con la siguiente iteración
+         continue;
+      }
+
+      num += 2; // Aumenta num en 2 en cada iteración
+      paraRetornar.push(num);
+   }
+
+   return paraRetornar;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

@@ -41,6 +41,7 @@ function conection(status) {
       return "Offline";
    }
 
+
 }
 
 function saludo(idioma) {
@@ -72,18 +73,18 @@ function colors(color) {
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
    // Tu código:
-   switch (color){
-      case "blue":
-         return "This is blue";
+  switch (color){
+   case "blue":
+      return "This is blue";
       case "red":
          return "This is red";
-      case "green":
-         return "This is green";
-      case "orange":
-         return "This is orange";
-         default:
-            return "Color not found";
-   }
+         case "green":
+            return "This is green";
+            case "orange":
+               return "This is orange";
+               default :
+               return "Color not found";
+  }
 }
 
 function esDiezOCinco(num) {
@@ -115,11 +116,7 @@ function esEntero(num) {
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
    // Tu código:
-   if (num === Math.floor(num)) {
-      return true;
-    } else {
-      return false;
-    }
+   return Number.isInteger(num);
 
 }
 
@@ -168,19 +165,19 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
-   if ( num <= 1){
+   if (num <= 1){
+      return false; 
+}
+for (let i = 2; i <= Math.sqrt(num); i++) {
+   if (num % i === 0) {
       return false;
-   } else if ( num <= 3 ){
-      return true;
-   }else  if ( num % 2 === 0  || num % 3 === 0){
-      return false
    }
-   for (let i = 5 ; i  * i <= num ; i += 6){
-      if ( num % i ===0 || num % (i +2 ) === 0)
-      return false
-   }
+}
+
 return true;
 }
+
+
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
